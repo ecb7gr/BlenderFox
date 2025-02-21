@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cchs1s81ala34"]
+
+[ext_resource type="PackedScene" uid="uid://bo8p18d5d5y3v" path="res://foxy.blend" id="1_i5lu3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0mjmj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h7u8r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.92367, 0, 0, 0, 0.267961, 0, 0, 0, 8.8563, 0, 0.381908, 0.459576)
+mesh = SubResource("CylinderMesh_0mjmj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("CylinderShape3D_h7u8r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.768495, 0.583865, -0.26176, -0.614753, 0.787198, -0.048965, 0.177468, 0.198547, 0.96389, -1.23752, 3.54293, 6.69727)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.954854, 0, 0.297075, 0, 1, 0, -0.297075, 0, 0.954854, 2.64863, 1.59251, 9.23175)
+
+[node name="foxy" parent="." instance=ExtResource("1_i5lu3")]
+transform = Transform3D(-0.222497, 0.129038, 0.966356, -0.042054, 0.98901, -0.141745, -0.974026, -0.0721771, -0.214625, -0.661425, 3.12268, 1.73907)
